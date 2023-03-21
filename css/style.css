@@ -1,0 +1,256 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap);
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
+}
+
+body {
+   background: #000116;
+}
+
+header {
+   z-index: 999;
+   position: fixed;
+   width: 100%;
+}
+
+header .nav-bar {
+   position: relative;
+   background: rgba(255, 255, 255, 0.1);
+   backdrop-filter: blur(20px);
+   height: 4em;
+   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+   top: 0;
+   left: 0;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0px 150px;
+   transition: 0.5s ease;
+}
+
+.nav-bar .logo {
+   color: #fff;
+   font-size: 1.8em;
+   font-weight: 600;
+   letter-spacing: 2px;
+   text-transform: uppercase;
+   text-decoration: none;
+}
+
+.navigator .nav-item a {
+   color: #fff;
+   font-size: 1em;
+   text-decoration: none;
+}
+
+.navigator .nav-item a:not(:last-child) {
+   margin-right: 50px;
+}
+
+.navigator .nav-item a i {
+   display: none;
+}
+
+section {
+   position: relative;
+   font-size: 1em;
+   padding: 30px 150px;
+   transition: .5s ease;
+   transition-property: padding;
+}
+
+.home {
+   position: relative;
+   min-height: 100vh;
+   background: url(../images/home-bg.jpg) no-repeat;
+   background-size: cover;
+   background-position: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.home::after {
+   content: '';
+   position: absolute;
+   left: 0;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   background: #00000059;
+   z-index: -0;
+}
+
+.home::before {
+   z-index: 888;
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 50px;
+   background: linear-gradient(transparent, #000116);
+   bottom: 0;
+   left: 0;
+}
+
+.home h1 {
+   z-index: 5;
+   color: rgba(255, 255, 255, 0.5);
+   font-size: 6em;
+   font-weight: 600;
+   text-align: center;
+}
+
+.content h1 {
+   color: #fff;
+   font-size: 3.5em;
+   font-weight: 600;
+}
+
+.content p {
+   color: #fff;
+   font-size: 1em;
+   margin: 30px 0;
+}
+
+::-webkit-scrollbar {
+   background: #fff;
+   width: 11px;
+   border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb {
+   background: #282f4e;
+   width: 100%;
+   border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background: #454f6d;
+}
+
+.scroll-indicator-container {
+   width: 100%;
+   height: 5px;
+}
+
+.scroll-indicator-bar {
+   background: #199fff;
+   box-shadow: 0 0px 25px #199fff,
+      0 0px 50px #199fff;
+   width: 0%;
+   height: 100%;
+}
+
+.nav-close-btn,
+.nav-menu-btn {
+   display: none;
+}
+
+@media screen and (max-width: 1100px) {
+   .home h1 {
+      font-size: 4em;
+   }
+
+   .content h1 {
+      font-size: 2em;
+   }
+
+   .content {
+      font-size: 1em;
+   }
+
+   header .nav-bar {
+      padding: 0px 50px;
+   }
+
+   section {
+      padding: 30px 50px;
+      font-size: 0.9em;
+   }
+}
+
+
+@media screen and (max-width: 850px) {
+   header .nav-bar {
+      padding: 0px 20px;
+   }
+
+   section {
+      padding: 30px 20px;
+      font-size: 0.8em;
+   }
+
+   .nav-menu-btn {
+      display: block;
+      color: #fff;
+      font-size: 1.5em;
+      cursor: pointer;
+   }
+
+   .navigator {
+      z-index: 99999;
+      position: fixed;
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.3s ease;
+   }
+
+   .navigator.active {
+      visibility: visible;
+      opacity: 1;
+   }
+
+   .navigator .nav-item {
+      position: relative;
+      background: #fff;
+      width: 400px;
+      max-width: 400px;
+      display: grid;
+      place-content: center;
+      margin: 20px;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.8);
+      transform: translateY(-200px);
+      transition: 0.3s ease;
+   }
+
+   .navigator.active .nav-item {
+      transform: translateY(0);
+   }
+
+   .navigator .nav-item a {
+      color: #222;
+      font-size: 1em;
+      margin: 15px 50px;
+   }
+
+   .navigator .nav-item a i {
+      display: inline-block;
+      font-size: 1.2em;
+      margin-right: 5px;
+   }
+
+   .nav-close-btn {
+      display: block;
+      color: #222;
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 1.3em;
+      margin: 10px;
+      cursor: pointer;
+   }
+}
